@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Announcement from "../Announcement/Announcement";
-import "./Downstairs.css";
+import "./Screen1.css";
 
 import { db } from "../../util/firebase";
 
 import { useSelector } from "react-redux";
 import { selectActiveIndex } from "../../features/announcementSlice";
 
-function Downstairs() {
+function Screen1() {
   const activeIndex = useSelector(selectActiveIndex);
   const [time, setTime] = useState({
     time: new Date().toLocaleTimeString().split(" ").shift(),
@@ -42,8 +42,8 @@ function Downstairs() {
   }, []);
 
   return (
-    <main className="downstairs">
-      <aside className="downstairs__roomList">
+    <main className="screen1">
+      <aside className="screen1__roomList">
         <div className="roomList__row">
           <h4 className="roomList__subTitle">Room</h4>
           <h4 className="roomList__subTitle">Activity</h4>
@@ -74,7 +74,7 @@ function Downstairs() {
         </div>
       </aside>
 
-      <section className="downstairs__announcements">
+      <section className="screen1__announcements">
         {announcementList.map((item) => {
           const index = announcementList.indexOf(item);
           const total = announcementList.length;
@@ -96,4 +96,4 @@ function Downstairs() {
   );
 }
 
-export default Downstairs;
+export default Screen1;
