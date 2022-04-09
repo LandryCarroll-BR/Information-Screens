@@ -1,0 +1,106 @@
+.announcementEditor__cardcontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: minmax(100px, auto);
+  gap: 1em;
+  margin-bottom: 5em;
+}
+
+.announcementEditor__card {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2em;
+  width: 100%;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+.announcementEditor__card > h2,
+.announcementEditor__card > p {
+  transition: opacity 300ms;
+  opacity: 0.7;
+}
+
+.announcementEditor__card > h2 {
+  margin-bottom: 0.1em;
+}
+
+.announcementEditor__card:hover > h2,
+.announcementEditor__card:hover > p {
+  opacity: 1;
+}
+
+.announcementEditor__card:hover > .announcementEditor__image {
+  filter: opacity(1);
+  transform: translateY(-2%);
+}
+
+.announcementEditor__image {
+  height: 13em;
+  width: 100%;
+  background-size: cover;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
+  filter: opacity(0.8);
+  transition: transform 300ms, filter 300ms;
+  overflow: hidden;
+}
+
+.announcementEditor__image::after {
+  content: "Edit";
+  opacity: 1;
+  width: fit-content;
+  text-align: center;
+  padding: 0.5em 1em;
+  border-radius: 0 0 0 0.5em;
+  background: #b27af7;
+  color: #ffffff;
+  font-weight: 600;
+  float: right;
+  width: fit-content;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.announcementEditor__card:hover > .announcementEditor__image::after {
+  opacity: 1;
+}
+
+.addAnnouncement {
+  display: flex;
+  height: 13em;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1em;
+  cursor: pointer;
+}
+
+.announcementEditor button {
+  width: fit-content;
+  text-align: center;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  color: #b27af7;
+  border: 1px solid #b27af7;
+  background: #b27af71f;
+  font-weight: 600;
+  margin-top: 0.8em;
+  cursor: pointer;
+}
+
+.announcementEditor button:hover {
+  background: #b27af76c;
+  color: white;
+}
+
+.announcementEditor__editorcontainer,
+.announcementEditor__editorcontainer > form,
+.announcementEditor__editorcontainer input {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}

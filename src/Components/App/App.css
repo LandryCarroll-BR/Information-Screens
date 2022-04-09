@@ -1,0 +1,18 @@
+:root {
+  --dark-mode-text: #fff;
+  --dark-mode-bg: rgba(0, 0, 0, 0.87);
+  --light-mode-text: #000;
+  --light-mode-bg: #fff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  background-color: var(--dark-mode-bg);
+  color: var(--dark-mode-text);
+}
